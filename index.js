@@ -59,17 +59,19 @@ function flipCard() {
     }
 
     secondCard = this;
-    score++;
-    document.querySelector(".score").textContent = score;
-    lockBoard = true;
-
     checkForMatch();
 }
 
 // Check if two cards match
 function checkForMatch() {
     let isMatch = firstCard.dataset.name === secondCard.dataset.name;
-    isMatch ? disableCards() : unflipCards();
+    if (isMatch) {
+        score++; 
+        document.querySelector(".score").textContent = score;
+        disableCards();
+    } else {
+        unflipCards();
+    }
 }
 
 // Disable matched cards
