@@ -22,5 +22,17 @@
     {
         "image":"../assets/monkey.png",
         "name":"Monkey"
-    }  
+    },
+    {
+        "image":"../assets/owl.png",
+        "name":"Owl"
+    },
+    {
+        "image":"../assets/rabbit.png",
+        "name":"Rabbit"
+    },
+    {
+        "image":"../assets/rat.png",
+        "name":"Rat"
+    }
 ]

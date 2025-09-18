@@ -1,0 +1,83 @@
+body {
+    min-height: 100vh;
+    background-color: #9489dc;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    background-color: #27ae60;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(6, 140px);
+    grid-gap: 16px;
+    justify-content:center ;
+    grid-template-rows: repeat(2, calc(140px / 2 * 3));
+}
+
+.card {
+    height: calc(140px / 2 * 3);
+    width: 140px;
+    border-radius: 10px;
+    background-color: rgb(244, 240, 240);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+.front-image {
+    width: 60px;
+    height: 60px;;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card .front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+.card .back {
+    background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='40' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='%23000000ff'/><path d='M10 4.124L4.155 9.987-4.124 10l-5.863-5.845L-10-4.124l5.845-5.863L4.124-10l5.863 5.845zm40 40l-5.845 5.863-8.279.013-5.863-5.845L30 35.876l5.845-5.863L44.124 30l5.863 5.845zm-40 0l-5.845 5.863-8.279.013-5.863-5.845-.013-8.279 5.845-5.863L4.124 30l5.863 5.845zm40-40l-5.845 5.863-8.279.013-5.863-5.845L30-4.124l5.845-5.863L44.124-10l5.863 5.845z'  stroke-linecap='square' stroke-width='2.5' stroke='%23ffeb3bff' fill='none'/><path d='M30 24.124l-5.845 5.863-8.279.013-5.863-5.845L10 15.876l5.845-5.863L24.124 10l5.863 5.845z'  stroke-linecap='square' stroke-width='2.5' stroke='%235326b5ff' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-112,-114)' fill='url(%23a)'/></svg>");
+    background-position: center center;
+    background-size: cover;
+    backface-visibility: hidden;
+}
